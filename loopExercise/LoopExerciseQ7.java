@@ -23,6 +23,12 @@ public class LoopExerciseQ7 {
 				}
 			}else if( i == 3) {
 				System.out.println("3. ");
+				for(int l = 1; l <= 9; l++) {
+					for(int k = 9; k > l; k--) {
+						System.out.print(" ");
+					}
+					System.out.println("8");
+				}
 			}
 		}
 	}
