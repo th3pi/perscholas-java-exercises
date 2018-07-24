@@ -16,7 +16,11 @@ import coreJava.Models.Course;
  *
  */
 public class CourseDAO {
-	
+	/*
+	 * @param file fetches the data from Courses.csv
+	 * @param input reads file from Courses.csv
+	 * @param data adds the data from Courses.csv to an Array
+	 */
 	public List<Course> getAllCourses()throws IOException{
 		File file = new File("C:\\Users\\th3pi\\Desktop\\sms\\Courses.csv");
 		Scanner input = new Scanner(file);

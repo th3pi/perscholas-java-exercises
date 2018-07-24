@@ -19,6 +19,11 @@ import coreJava.Models.Course;
  */
 public class AttendingDAO {
 	
+	/*
+	 * @param file fetches the data from Attending.csv
+	 * @param input reads file from Attedning.csv
+	 * @param data adds the data from Attending.csv to an Array
+	 */
 	public List<Attending> getAttending()throws IOException{
 		File file = new File("C:\\Users\\th3pi\\Desktop\\sms\\Attending.csv");
 		Scanner input = new Scanner(file);
@@ -31,6 +36,11 @@ public class AttendingDAO {
 		return data;
 	}
 	
+	/*
+	 * This method registers a student to a course if the are not already registered
+	 * @param flag is necessary to understand if the student is enrolled in the course already or no
+	 * 
+	 */
 	public void registerStudentToCourse(List<Attending> attending, String student_email, int course_id)throws IOException {
 		boolean flag = false;
 		for(Attending a : attending) {
@@ -44,6 +54,11 @@ public class AttendingDAO {
 			saveAttending(attending);
 		}
 	}
+	
+	/*
+	 * @param courseData holds are the course information from the Courses.csv
+	 * @param attendingCourse is an arraylist that appends depending on courses student have registered to
+	 */
 	public List<Course> getStudentCourses(List<Attending> attending, String studentEmail)throws IOException{
 		List<Course> courseData = new ArrayList<Course>();
 		List<Course> attendingCourse = new ArrayList<Course>();
@@ -60,6 +75,10 @@ public class AttendingDAO {
 		}
 		return attendingCourse;
 	}
+	
+	/*
+	 * This method saves the new classes student is taking to the Attending.csv file
+	 */
 	public void saveAttending(List<Attending> attending) throws IOException {
 		File file = new File("C:\\Users\\th3pi\\Desktop\\sms\\Attending.csv");
 		PrintStream fileStream = new PrintStream(file);
