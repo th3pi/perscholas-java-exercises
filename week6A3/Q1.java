@@ -56,4 +56,47 @@ public class Q1 {
 		Collections.sort(str);
 		System.out.println(str);
 	}
+	
+	//Q7
+	
+	static void reversing(List<String> str) {
+		Collections.reverse(str);
+	}
+	
+	//Q8
+	
+	static void copying(List<String> str) {
+		List<String> str2 = new ArrayList<String>();
+		Collections.copy(str2,str);
+	}
+	
+	//Q9
+	
+	static void comparing(List<String> str, List<String> str2) {
+		str.removeAll(str2);
+		str2.removeAll(str);
+		
+	}
+	
+	//Q10
+	
+	static void appending(List<String> str, List<String> str2) {
+		for(int i = 0; i < str2.size(); i++) {
+			str.add(str.get(i));
+		}
+	}
+	
+	//Q11
+	
+	static void looping(List<String> str) {
+		for(String s : str) {
+			System.out.println(s);
+		}
+	}
+	
+	//Q12
+	
+	static void coverting(List<String> str, String[] arr) {
+		str = new ArrayList<>(Arrays.asList(arr));
+	}
 }
